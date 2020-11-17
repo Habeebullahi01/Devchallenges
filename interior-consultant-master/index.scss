@@ -1,0 +1,173 @@
+html {
+    * {background-color: rgb(36, 34, 34);color: white;}
+    body {
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 1em;
+            .logo {
+                font-family: 'Crimson Pro', serif;
+                border: yellow 5px solid;
+                font-weight: 200;
+                font-size: 1em;
+                padding: .2em;
+                height: fit-content;
+            }
+            #menu {
+                display: block; 
+            }
+            .overlay {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                background-color: rgb(0,0,0);
+                background-color: rgba(0,0,0, 0.9);
+                overflow-x: hidden;
+                transition: 0.5s;
+                #links {
+                    font-family: 'Montserrat', sans-serif;
+                    background-color: transparent;
+                    position: relative;
+                    top: 25%;
+                    width: 100%;
+                    text-align: center;
+                    margin-top: 30px;
+                    a {
+                        background-color: transparent;
+                        display: block;
+                        margin: 1.5em auto;
+                        text-decoration: none;
+                        font-weight: 400;
+                    }
+                    a:first-child {
+                        font-weight: bold;
+                    }
+                }
+                #close {
+                    position: absolute;
+                    top: 20px;
+                    right: 45px;
+                }
+            }
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            margin: 6em auto;
+            justify-content: space-evenly;
+            height: 100%;
+            .text {
+                h1 {
+                    font-family: 'Lora', serif;
+                }
+                p {
+                    width: 60%;
+                    font-family: 'Montserrat', sans-serif;
+                }
+            }
+            .image {
+                margin-top: 2em;
+                position: relative;
+                .decor {
+                    width: 100%;
+                }
+                .des {
+                    width: 60%;
+                    max-width: 80%;
+                    padding: 0 .5em;
+                    position: absolute;
+                    bottom: -5em;
+                    right: 1em;
+                    box-shadow: black 2px 2px 5px, black -2px 0px 5px;
+                    header {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: left;
+                        padding: .5em;
+                        font-family: 'Montserrat', sans-serif;
+                        img {
+                            width: 3em;
+                            height: 3em;
+                            border-radius: 100%;
+                        }
+                        div {
+                            width: 70%;
+                            margin: 0 20px;
+                            h5 {
+                                margin: 0;
+                            }
+                        }
+                    }
+                    .des-note {
+                        font-size: large;
+                        font-weight: bold;
+                        width: 70%;
+                        font-family: 'Lora', serif;
+                    }
+                }
+            }
+        }
+        footer {
+            background-color: transparent;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+    @media (min-width: '426px') {
+        body {
+            nav {
+                .logo {
+                    border: white 1px solid;
+                }
+                #menu {
+                    display: none;
+                }
+                .overlay {
+                height: fit-content;
+                width: fit-content;
+                position: static;
+                z-index: initial;
+                background-color: transparent;
+                overflow-x: hidden;
+                transition: 0.5s;
+                    #links {
+                        display: block;
+                        position: static;
+                        padding: .5em;
+                        width: auto;
+                        height: auto;
+                        a {
+                            display: initial;
+                            margin: 0 2.5em;
+                        }
+                    }
+                    #close {
+                        display: none;
+                    }
+                }
+            }
+            main {
+                flex-direction: row;
+                .text {
+                    width: 30%;
+                    p {
+                        width: 60%;
+                    }
+                }
+                .image {
+                    width: 50%;
+                    .des {
+                        width: 20em;
+                    }
+                }
+            }
+        }
+    }
+}
